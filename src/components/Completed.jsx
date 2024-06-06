@@ -5,20 +5,6 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Goal = ({ title, description, _id }) => {
-  const handleDelete = async (id) => {
-    try {
-      const url = `https://goalonapi.onrender.com/api/goals/${id}`;
-      const res = await fetch(url, {
-        method: "DELETE",
-      });
-      const data = await res.json();
-      if (data.success) {
-        window.location.reload();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <div className="border-bottom border-3 border-secondary-subtle pb-4 px-4 mt-4 shadow-sm">
       <p className="text-secondary fw-light"> {`Congratulations 🎉`} </p>
@@ -38,10 +24,7 @@ const Goal = ({ title, description, _id }) => {
               Edit{" "}
             </Link>
           </button>
-          <button
-            className="p-2 border-none bg-transparent transparent delbtn"
-            onClick={() => handleDelete(_id)}
-          >
+          <button className="p-2 border-none bg-transparent transparent delbtn">
             <RiDeleteBinLine /> Delete{" "}
           </button>
         </div>
