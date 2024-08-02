@@ -1,4 +1,4 @@
-import Goal from "../components/Goal";
+import SingleGoal from "../components/SingleGoal";
 import GoalHeader from "../components/GoalHeader";
 import Loading from "../components/Loading";
 import { useFetch } from "../Hooks/useFetch";
@@ -13,7 +13,7 @@ const Ongoing = () => {
       <div>
         {Goals &&
           ongoingGoals.map((g) => {
-            return <Goal key={g._id} {...g} />;
+            return <SingleGoal key={g._id} {...g} />;
           })}
       </div>
     </div>
